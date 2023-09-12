@@ -1,15 +1,28 @@
-def recur_factorial(n):
-  if n == 1:
-    return n
-  else:
-    return n * recur_factorial(n - 1)
+class Bank_Account:
+
+  def __init__(self):
+    self.balance = 0
+    print("Welcome to the Deposit & Withdrawal")
+
+  def deposit(self):
+    amount = float(input("Enter amount to be Deposited: "))
+    self.balance += amount
+    print("\n Amount Deposited:", amount)
+
+  def withdraw(self):
+    amount = float(input("Enter amount to be Withdrawn: "))
+    if self.balance >= amount:
+      self.balance -= amount
+      print("\n You Withdrew:", amount)
+    else:
+      print("\n Insufficient balance  ")
+
+  def display(self):
+    print("\n Net Available Balance=", self.balance)
 
 
-num = 7
+s = Bank_Account()
 
-if num < 0:
-  print("Sorry, factorial does not exist for negative numbers")
-elif num == 0:
-  print("The factorial of 0 is 1")
-else:
-  print("The factorial of", num, "is", recur_factorial(num))
+s.deposit()
+s.withdraw()
+s.display()
