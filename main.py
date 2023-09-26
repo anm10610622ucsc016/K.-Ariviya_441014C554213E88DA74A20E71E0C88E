@@ -1,28 +1,19 @@
-class Bank_Account:
+def search(a, l, x):
 
-  def __init__(self):
-    self.balance = 0
-    print("Welcome to the Deposit & Withdrawal")
-
-  def deposit(self):
-    amount = float(input("Enter amount to be Deposited: "))
-    self.balance += amount
-    print("\n Amount Deposited:", amount)
-
-  def withdraw(self):
-    amount = float(input("Enter amount to be Withdrawn: "))
-    if self.balance >= amount:
-      self.balance -= amount
-      print("\n You Withdrew:", amount)
-    else:
-      print("\n Insufficient balance  ")
-
-  def display(self):
-    print("\n Net Available Balance=", self.balance)
+  # Traversing the array
+  for i in range(l):
+    if (a[i] == x):
+      return i
+  return -1
 
 
-s = Bank_Account()
-
-s.deposit()
-s.withdraw()
-s.display()
+a = [10, 8, 6, 4, 2]
+print("The given array is ", a)
+x = 6
+print("Element to be searched is ", x)
+l = len(a)
+ind = search(a, l, x)
+if (ind == -1):
+  print("Element Not Found")
+else:
+  print("Element is at index ", ind)
